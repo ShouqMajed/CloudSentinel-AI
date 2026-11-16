@@ -1,0 +1,20 @@
+steps:
+  - name: 'python:3.13'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'pip install -r requirements.txt && python -m py_compile main.py'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'cloudsentinel-processor'
+      - '--source=.'
+      - '--function=hello_gcs'
+      - '--base-image=python313'
+      - '--region=us-central1'
+      - '--project=$PROJECT_ID'
+      - '--quiet'
+options:
+  logging: CLOUD_LOGGING_ONLY
