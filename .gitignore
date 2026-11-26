@@ -218,3 +218,53 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# ==========================================
+# CloudSentinel AI - Security & Credentials
+# ==========================================
+
+# Environment variables
+.env.*
+!.env.example
+
+# Google Cloud credentials
+credentials.json
+*credentials*.json
+*service-account*.json
+*service_account*.json
+application_default_credentials.json
+gha-creds-*.json
+
+# Gmail API and OAuth credentials
+token.json
+token_*.json
+*oauth*.json
+client_secret*.json
+gmail_token*.json
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local secrets
+secrets/
+.secrets/
+secrets.json
+
+# Local Google Cloud configuration
+.config/gcloud/
+.gcloud/
+
+# Raw and private datasets
+data/raw/
+data/private/
+data/incoming/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
